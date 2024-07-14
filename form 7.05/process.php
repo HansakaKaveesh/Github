@@ -13,11 +13,11 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $age = htmlspecialchars($_POST['age']);
-    $gender = htmlspecialchars($_POST['gender']);
-    $comments = htmlspecialchars($_POST['comments']);
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $comments = $_POST['comments'];
 
 
     $stmt = $conn->prepare("INSERT INTO users (name, email, age, gender, comments) VALUES (?, ?, ?, ?, ?)");
